@@ -4,6 +4,9 @@ const todoList = [{
 }, {
   name: 'Play Badminton',
   dueDate: '2025-11-08'
+}, {
+  name: 'Feed the cats',
+  dueDate: '2025-11-09'
 }];
 renderTodoList();
 
