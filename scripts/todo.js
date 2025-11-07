@@ -16,11 +16,19 @@ function renderTodoList() {
 
   todoList.forEach(todoObject => {
     const {name, dueDate} = todoObject;
+
+    const formattedDate = new Date(dueDate).toLocaleDateString("en-US", {
+      month: "short",
+      day: "numeric",
+      year: "numeric"
+    }).replace(",", "");
     const html = `
-      <div>${name}</div>
-      <div>${dueDate}</div>
-      <button class="delete-button 
-      js-delete-button">Delete</button>
+      <div class="todo-item">
+        <div>${name}</div>
+        <div>${formattedDate}</div>
+        <button class="delete-button 
+        js-delete-button">Delete</button>
+      </div>
     `;
     todoListHTML += html;
   });
